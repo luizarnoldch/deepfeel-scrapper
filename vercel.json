@@ -2,14 +2,14 @@
   "version": 2,
   "build": [
     {
-      "src": "scrapping-tiktok-fb.py",
+      "src": "app.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/{.*}",
-      "dest": "scrapping-tiktok-fb.py"
+      "src": "/(.*)",
+      "dest": "app.py"
     }
   ]
 }

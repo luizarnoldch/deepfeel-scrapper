@@ -196,7 +196,7 @@ def scrape_tiktok():
             "fecha_publicacion": fechas
         })
 
-    return format_response(df, "TikTok")
+    return format_response(df, "tiktok")
 
 
 @app.route("/facebook", methods=["GET"])
@@ -255,7 +255,7 @@ def scrape_facebook():
         "url": URL_df
     })
 
-    return format_response(df, "Facebook")
+    return format_response(df, "facebook")
 
 
 if __name__ == "__main__":

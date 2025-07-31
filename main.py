@@ -28,7 +28,7 @@ def scrape_tiktok():
     video_url = f"https://www.tiktok.com/search?q={key}"
 
     chrome_options = Options()
-    #chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
@@ -65,7 +65,7 @@ def scrape_tiktok():
     df = pd.DataFrame({
         "red_social": "tiktok",
         "palabra_clave": key,
-        "url": video_urls
+        "url": video_urls[0:2]
     })
 
     df = df.drop_duplicates()
@@ -153,10 +153,6 @@ def scrape_facebook():
     df = df.drop_duplicates()
 
     return jsonify(df.to_dict(orient="records"))
-
-
-
-
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
